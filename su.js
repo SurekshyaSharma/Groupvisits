@@ -28,12 +28,7 @@ $(document).ready(
                     // * - 1 : get a reverse sort
                     return (new Date(b.start) - new Date(a.start)) * - 1; 
                 });
-                var month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-          
-                $.each(month, function (j) {
-                    console.log(j);
-                    
-                });
+               
 
                 $.each(_sortedData, function (index, value) {
                     // get Event dates for sign up
@@ -51,39 +46,127 @@ $(document).ready(
 
                     var _eventUrl = value.eventUrl;
                     var _title = value.title;
-                   
-                   
-                
+                    var month =_date.getMonth();
+                    
 
-                         //console.log(month .indexOf('January'));
-                         //console.log(month [0]);
-                         //console.log(month .length);
-                         //console.log(_visitDate);
-                       
-                     
+                         console.log(month);
+                         console.log(_visitDate);
 
-                         
+                         if(month > 1 && month < 5){
+                        
+                            $('.showSignUp').append(
+                                '<h1>'+ 'Spring' + '</h1>'+
+                                '<div class="row">' +
+                                    '<div class="left">' +
+                                        '<p style="display: inline; float: left;">' +
+                                            '<p class="time">' +
+                                                '<strong>' + _title + '</strong>' + 
+                                            '</p>' +
+                                        '</p>' +
+                                    '</div>' +
+        
+                                    '<div class="right">' +
+                                        '<p style="margin: 0px 0px 0px 15px!Important; display: inline;">' +
+                                            '<a href="' + _eventUrl + '" target="_blank" style="font-weight: bold; color: #9e28b5;">' +
+                                                '<button><span>Register </span></button>' +
+                                            '</a>' +
+                                        '</p>' +
+                                    '</div>' +
+                                '</div>'
+                            );
+        
+                            }
+                     else if(month > 4 && month < 8){
+                        
+                    $('#summer').append(
+                        
+                        '<div class="row">' +
+                            '<div class="left">' +
+                                '<p style="display: inline; float: left;">' +
+                                    '<p class="time">' +
+                                        '<strong>' + _title + '</strong>' + 
+                                    '</p>' +
+                                '</p>' +
+                            '</div>' +
 
-                //     $('.showSignUp').append(
-                //         '<div class="row">' +
-                //             '<div class="left">' +
-                //                 '<p style="display: inline; float: left;">' +
-                //                     '<p class="time">' +
-                //                         '<strong>' + _title + '</strong>' + 
-                //                     '</p>' +
-                //                 '</p>' +
-                //             '</div>' +
+                            '<div class="right">' +
+                                '<p style="margin: 0px 0px 0px 15px!Important; display: inline;">' +
+                                    '<a href="' + _eventUrl + '" target="_blank" style="font-weight: bold; color: #9e28b5;">' +
+                                        '<button><span>Register </span></button>' +
+                                    '</a>' +
+                                '</p>' +
+                            '</div>' +
+                        '</div>'
+                    );
 
-                //             '<div class="right">' +
-                //                 '<p style="margin: 0px 0px 0px 15px!Important; display: inline;">' +
-                //                     '<a href="' + _eventUrl + '" target="_blank" style="font-weight: bold; color: #9e28b5;">' +
-                //                         '<button class="button" style="vertical-align:middle"><span>Register </span></button>' +
-                //                     '</a>' +
-                //                 '</p>' +
-                //             '</div>' +
-                //         '</div>'
-                //     );
-
+                    }
+                    else if(month > 7 && month < 11){
+                        $('.showSignUp').append(
+                            
+                            '<div class="row">' +
+                                '<div class="left">' +
+                                    '<p style="display: inline; float: left;">' +
+                                        '<p class="time">' +
+                                            '<strong>' + _title + '</strong>' + 
+                                        '</p>' +
+                                    '</p>' +
+                                '</div>' +
+    
+                                '<div class="right">' +
+                                    '<p style="margin: 0px 0px 0px 15px!Important; display: inline;">' +
+                                        '<a href="' + _eventUrl + '" target="_blank" style="font-weight: bold; color: #9e28b5;">' +
+                                            '<button><span>Register </span></button>' +
+                                        '</a>' +
+                                    '</p>' +
+                                '</div>' +
+                            '</div>'
+                        );
+                    }
+                    else if (month==0 && month<2){
+                        $('#winter').append(
+                            
+                            '<div class="row">' +
+                                '<div class="left">' +
+                                    '<p style="display: inline; float: left;">' +
+                                        '<p class="time">' +
+                                            '<strong>' + _title + '</strong>' + 
+                                        '</p>' +
+                                    '</p>' +
+                                '</div>' +
+    
+                                '<div class="right">' +
+                                    '<p style="margin: 0px 0px 0px 15px!Important; display: inline;">' +
+                                        '<a href="' + _eventUrl + '" target="_blank" style="font-weight: bold; color: #9e28b5;">' +
+                                            '<button><span>Register </span></button>' +
+                                        '</a>' +
+                                    '</p>' +
+                                '</div>' +
+                            '</div>'
+                        );
+                    }
+                    else if(month==11){
+                        $('#winter').append(
+                           
+                            '<div class="row">' +
+                                '<div class="left">' +
+                                    '<p style="display: inline; float: left;">' +
+                                        '<p class="time">' +
+                                            '<strong>' + _title + '</strong>' + 
+                                        '</p>' +
+                                    '</p>' +
+                                '</div>' +
+    
+                                '<div class="right">' +
+                                    '<p style="margin: 0px 0px 0px 15px!Important; display: inline;">' +
+                                        '<a href="' + _eventUrl + '" target="_blank" style="font-weight: bold; color: #9e28b5;">' +
+                                            '<button><span>Register </span></button>' +
+                                        '</a>' +
+                                    '</p>' +
+                                '</div>' +
+                            '</div>'
+                        );
+                    }
+                    
                  });
 
 
